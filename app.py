@@ -15,5 +15,7 @@ if st.button("🧠 Solve") and query:
 
     # Optional: show graph if generated
     import os
-    if os.path.exists("final_cbse_math_engine/polynomial_plot.png"):
-        st.image("final_cbse_math_engine/polynomial_plot.png", caption="📈 Polynomial Plot")
+    if "factor" in query.lower() or "polynomial" in query.lower():
+        plot_path = "final_cbse_math_engine/polynomial_plot.png"
+        if os.path.exists(plot_path):
+            st.image(plot_path, caption="📈 Polynomial Plot")
